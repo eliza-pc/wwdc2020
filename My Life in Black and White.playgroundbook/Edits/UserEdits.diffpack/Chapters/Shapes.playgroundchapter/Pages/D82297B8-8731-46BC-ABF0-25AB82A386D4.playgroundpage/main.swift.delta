@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Shapes.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>/* ---------------- considerations -------------------  */
+/* 
+ 
+ This playground were made to be a live view experience. 
+ The code interations will not influence. 
+ 
+ */
+
+import Foundation
+import PlaygroundSupport
+
+Canvas.shared.color = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+
+/* ------------------- set windows  -------------------  */
+
+var window1 = Image(name: "Janela1")
+window1.size = Size(width: 35, height: 35)
+window1.center = Point(x: -30, y: 40)
+
+var window2 = Image(name: "janela2")
+window2.size = Size(width: 35, height: 35)
+window2.center = Point(x: 0, y: 40)
+
+var window3 = Image(name: "janela3")
+window3.size = Size(width: 35, height: 35)
+window3.center = Point(x: 30, y: 40)
+
+var window4 = Image(name: "janela2")
+window4.size = Size(width: 35, height: 35)
+window4.center = Point(x: -30, y: 0)
+
+var window5 = Image(name: "janela3")
+window5.size = Size(width: 35, height: 35)
+window5.center = Point(x: 0, y: 0)
+
+var window6 = Image(name: "Janela1")
+window6.size = Size(width: 35, height: 35)
+window6.center = Point(x: 30, y: 0)
+
+/* ------------------- set text  -------------------  */
+
+var text1 = Image(name: "text1")
+text1.size = Size(width: 70, height: 70)
+text1.center = Point(x: 0, y: -40)
+
+var text2 = Image(name: "text2")
+text2.size = Size(width: 70, height: 70)
+text2.center = Point(x: 0, y: -40)
+text2.scale = 0.01
+
+var text3 = Image(name: "text3")
+text3.size = Size(width: 70, height: 70)
+text3.center = Point(x: 0, y: -40)
+text3.scale = 0.01
+
+var text4 = Image(name: "text4")
+text4.size = Size(width: 70, height: 70)
+text4.center = Point(x: 0, y: -40)
+text4.scale = 0.01
+
+/* ------------------- set logic  -------------------  */
+
+animate (duration: 3, delay: 4.0){
+    text1.center = Point(x: 140, y: -40)
+    text2.scale = 1
+}
+animate (duration: 6, delay: 8.0){
+    text2.center = Point(x: 140, y: -40)
+    text3.scale = 1
+}
+animate (duration: 9, delay: 16.0){
+    text3.center = Point(x: 140, y: -40)
+    text4.scale = 1
+}
+</string>
+			<key>ModifiedRange</key>
+			<string>{291, 1974}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{291, 0}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

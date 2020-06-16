@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Shapes.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>/* ---------------- considerations -------------------  */
+/* 
+ 
+ This playground were made to be a live view experience. 
+ The code interations will not influence. 
+ 
+ */
+
+import Foundation
+import PlaygroundSupport
+
+Canvas.shared.color = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+
+var count = 0 
+var bolAction = false
+var bolCondition = false
+
+var nextPt3 = Image(name: "nextButton")
+nextPt3.scale = 0
+nextPt3.center = Point(x: 0, y: -50)
+
+let title = Image(name: "titlePg6")
+title.center = Point(x: 0, y: 0)
+title.size = Size(width: 50, height: 50)
+
+let faseImg = Image(name: "fasePg6")
+faseImg.center = Point(x: 0, y: 20)
+//faseImg.scale = 3
+
+
+let instructions = Image(name: "dcpPg6")
+instructions.center = Point(x: -5, y: -15)
+instructions.size = Size(width: 50, height: 50)
+
+let congrats = Image(name: "cg2")
+congrats.center = Point(x: 0, y: -23)
+congrats.size = Size(width: 45, height: 35)
+congrats.scale = 0
+
+/* ------------------- Condition button set  -------------------  */
+
+let condition = Image(name: "Condition")
+condition.center = Point(x: -25, y: -20)
+condition.size = Size(width: 10, height: 10)
+
+
+let cdt1 = Image(name: "cdtButton1")
+cdt1.center = Point(x: -23, y: -25)
+cdt1.size = Size(width: 15, height: 15)
+cdt1.draggable = true
+
+
+let cdt1ORANGE = Image(name: "cdtButton1ORANGE")
+cdt1ORANGE.scale = 0.001
+
+let cdt2 = Image(name: "cdtButton2")
+cdt2.center = Point(x: -23, y: -33)
+cdt2.size = Size(width: 15, height: 15)
+cdt2.draggable = true
+
+let cdt2ORANGE = Image(name: "cdtButton2ORANGE")
+cdt2ORANGE.scale = 0.001
+
+/* ------------------- Action button set  -------------------  */
+
+let action = Image(name: "Action")
+action.center = Point(x: -4, y: -20)
+action.size = Size(width: 7, height: 7)
+
+let atcImg1 = Image(name: "actImg2")
+atcImg1.center = Point(x: -1, y: -25)
+atcImg1.size = Size(width: 15, height: 15)
+atcImg1.draggable = true
+
+
+let actImg1ORANGE = Image(name: "actImg2ORANGE")
+actImg1ORANGE.scale = 0.001
+
+let atcImg2 = Image(name: "atcImg3")
+atcImg2.center = Point(x: -1, y: -33)
+atcImg2.size = Size(width: 15, height: 15)
+atcImg2.draggable = true
+
+let atcImg2ORANGE = Image(name: "atcImg3ORANGE")
+atcImg2ORANGE.scale = 0.001
+
+
+func validaGame(){
+    if(bolAction &amp;&amp; bolCondition){
+        condition.scale = 0 
+        action.scale = 0
+        
+        
+        instructions.scale = 0
+        congrats.scale = 1.5
+        
+        nextPt3.scale = 1
+        
+        cdt1.scale = 0
+        cdt2.scale = 0
+        atcImg1.scale = 0
+        atcImg2.scale = 0
+        
+        nextPt3.onTouchUp {
+            PlaygroundPage.current.navigateTo(page: .next)
+        }
+    }
+}
+
+/* ------------------- set animations  -------------------  */
+
+faseImg.scale = 0
+instructions.scale = 0
+condition.scale = 0
+cdt1.scale = 0
+cdt2.scale = 0
+action.scale = 0
+atcImg1.scale = 0
+atcImg2.scale = 0
+
+animate ( duration: 3, delay: 2.0){
+    
+    title.center = Point(x: -140, y: 0)
+    
+    faseImg.scale = 3
+    instructions.scale = 1
+    condition.scale = 1
+    cdt1.scale = 1
+    cdt2.scale = 1
+    action.scale = 1
+    atcImg1.scale = 1
+    atcImg2.scale = 1
+}
+
+/* ------------------- Logic  -------------------  */
+
+cdt1.onTouchUp {
+    print(cdt1.center)
+    print(cdt2.center)
+    // x: -7.28 , y: 10.64
+    
+    if((cdt1.center.x &gt;= -8 &amp;&amp; cdt1.center.x &lt;= -4) &amp;&amp; (cdt1.center.y &gt;= 22 &amp;&amp; cdt1.center.y &lt;= 26)){
+        
+        cdt1.scale = 0
+        
+        cdt1ORANGE.size = Size(width: 15, height: 5)
+        cdt1ORANGE.scale = 1
+        cdt1ORANGE.center = Point(x: -6.8, y: 24.5)
+        
+        cdt2.center = Point(x: -23, y: -33)
+        cdt2.size = Size(width: 15, height: 15)
+        cdt2.scale = 1
+        cdt2ORANGE.scale = 0
+        
+        bolCondition = true
+        validaGame()
+    }
+}
+
+cdt2.onTouchUp {
+    print(cdt1.center)
+    print(cdt2.center)
+    // x: -7.28 , y: 10.64
+    
+    if((cdt2.center.x &gt;= -8 &amp;&amp; cdt2.center.x &lt;= -4) &amp;&amp; (cdt2.center.y &gt;= 22 &amp;&amp; cdt2.center.x &lt;= 26)){
+        
+        cdt2.scale = 0
+        
+        cdt2ORANGE.size = Size(width: 20, height: 6)
+        cdt2ORANGE.scale = 0.9
+        cdt2ORANGE.center = Point(x: -6.5, y: 24.4)
+        
+        cdt1.center = Point(x: -23, y: -25)
+        cdt1.size = Size(width: 15, height: 15)
+        cdt1.scale = 1
+        cdt1ORANGE.scale = 0
+        
+        bolCondition = true
+        validaGame()
+    }
+}
+
+atcImg1.onTouchUp {
+    print(atcImg1.center)
+    print(cdt2.center)
+    // x: -7.28 , y: 10.64
+    
+    if((atcImg1.center.x &gt;= -10 &amp;&amp; atcImg1.center.x &lt;= -3) &amp;&amp; (atcImg1.center.y &gt;= 17 &amp;&amp; atcImg1.center.y &lt;= 21)){
+        
+        atcImg1.scale = 0
+        
+        actImg1ORANGE.size = Size(width: 20, height: 6)
+        actImg1ORANGE.scale = 0.9
+        actImg1ORANGE.center = Point(x: -9, y: 19.5)
+        
+        atcImg2.center = Point(x: -1, y: -33)
+        atcImg2.size = Size(width: 15, height: 15)
+        atcImg2ORANGE.scale = 0
+        atcImg2.scale = 1
+        
+        bolAction = true
+        validaGame()
+        
+    }
+}
+atcImg2.onTouchUp {
+    print(atcImg2.center)
+    print(cdt2.center)
+    // x: -7.28 , y: 10.64
+    
+    if((atcImg2.center.x &gt;= -10 &amp;&amp; atcImg2.center.x &lt;= -3) &amp;&amp; (atcImg2.center.y &gt;= 17 &amp;&amp; atcImg2.center.x &lt;= 21)){
+        
+        atcImg2.scale = 0
+        
+        atcImg2ORANGE.size = Size(width: 20, height: 6)
+        atcImg2ORANGE.scale = 0.9
+        atcImg2ORANGE.center = Point(x: -9, y: 19.5)
+        
+        atcImg1.center = Point(x: -1, y: -25)
+        atcImg1.size = Size(width: 15, height: 15)
+        actImg1ORANGE.scale = 0
+        atcImg1.scale = 1
+        
+        bolAction = true
+        validaGame()
+        
+    }
+}
+
+
+
+</string>
+			<key>ModifiedRange</key>
+			<string>{291, 5620}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{291, 0}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

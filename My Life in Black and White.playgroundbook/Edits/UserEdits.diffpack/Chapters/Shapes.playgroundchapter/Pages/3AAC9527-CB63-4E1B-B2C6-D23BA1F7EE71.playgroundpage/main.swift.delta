@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Shapes.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>/* ---------------- considerations -------------------  */
+/* 
+ 
+ This playground were made to be a live view experience. 
+ The code interations will not influence. 
+ 
+ */
+
+import Foundation
+import PlaygroundSupport
+
+Canvas.shared.color = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+
+var next = Image(name: "nextButton")
+next.scale = 0.01
+next.center = Point(x: +30, y: -45)
+
+let title = Image(name: "title4")
+title.center = Point(x: 0, y: 0)
+title.size = Size(width: 50, height: 50)
+
+let faseImg = Image(name: "fase4")
+faseImg.center = Point(x: 0, y: 20)
+//faseImg.scale = 3
+
+let instructions = Image(name: "dcpPt4")
+instructions.center = Point(x: -4, y: -15)
+instructions.size = Size(width: 50, height: 50)
+
+let congrats = Image(name: "cg4")
+congrats.center = Point(x: 0, y: -24)
+congrats.size = Size(width: 35, height: 25)
+congrats.scale = 0
+
+let blueTshirt = Image(name: "garotaAzul")
+blueTshirt.center = Point(x: 0, y: 12)
+//blueTshirt.scale = 0.8
+
+let whiteTshirt = Image(name: "blusabranca")
+whiteTshirt.center = Point(x: 0, y: 12)
+//whiteTshirt.scale = 0.8
+
+let calmButton = Circle(radius: 5)
+calmButton.color = .white
+calmButton.dropShadow = Shadow()
+calmButton.center = Point(x: 0, y: -25)
+
+let breathButton = Circle(radius: 2)
+breathButton.color = .white
+breathButton.center = Point(x: 0.5, y: 7)
+
+/* ------------------- set animations  -------------------  */
+
+faseImg.scale = 0
+blueTshirt.scale = 0.001
+whiteTshirt.scale = 0.01
+calmButton.scale = 0.01
+breathButton.scale = 0.01
+instructions.scale = 0.01
+
+
+animate ( duration: 3, delay: 2.0){
+    
+    title.center = Point(x: -140, y: 0)
+    faseImg.scale = 3
+    whiteTshirt.scale = 0.8
+    whiteTshirt.scale = 0.8
+    calmButton.scale = 1
+    breathButton.scale = 1
+    instructions.scale = 1
+    
+}
+
+/* ------------------- logic  -------------------  */
+var count = 0
+calmButton.onTouchUp {
+    whiteTshirt.scale = 0.01
+    blueTshirt.scale = 0.8
+    animate(duration: 5, delay: 1) {
+        breathButton.scale = 3
+        breathButton.scale = 1
+    }
+    
+    count += 1
+    
+    if count == 2 {
+        
+        instructions.scale = 0
+        congrats.scale = 1.5
+        calmButton.scale = 0
+        next.scale = 1
+        next.onTouchUp {
+            PlaygroundPage.current.navigateTo(page: .next)
+        }
+    }
+    
+    
+}
+
+
+</string>
+			<key>ModifiedRange</key>
+			<string>{291, 2312}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{291, 0}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

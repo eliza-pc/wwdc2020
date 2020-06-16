@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseContentIdentifier</key>
+	<string>com.apple.playgrounds.Shapes</string>
+	<key>BaseContentVersion</key>
+	<string>3.0.2</string>
+	<key>ContentType</key>
+	<string>PlaygroundBookUserEdit</string>
+	<key>Diffs</key>
+	<dict>
+		<key>Chapters/Shapes.playgroundchapter/Pages/3AAC9527-CB63-4E1B-B2C6-D23BA1F7EE71.playgroundpage/UserManifest.plist</key>
+		<string>Added</string>
+		<key>Chapters/Shapes.playgroundchapter/Pages/3AAC9527-CB63-4E1B-B2C6-D23BA1F7EE71.playgroundpage/main.swift</key>
+		<string>Modified</string>
+		<key>Chapters/Shapes.playgroundchapter/Pages/3F6D0610-D8A8-427A-9EF5-FD0125887C1E.playgroundpage/UserManifest.plist</key>
+		<string>Added</string>
+		<key>Chapters/Shapes.playgroundchapter/Pages/3F6D0610-D8A8-427A-9EF5-FD0125887C1E.playgroundpage/main.swift</key>
+		<string>Modified</string>
+		<key>Chapters/Shapes.playgroundchapter/Pages/7F67303C-3C92-4D32-9D0A-810EA0CEE6BF.playgroundpage/UserManifest.plist</key>
+		<string>Added</string>
+		<key>Chapters/Shapes.playgroundchapter/Pages/7F67303C-3C92-4D32-9D0A-810EA0CEE6BF.playgroundpage/main.swift</key>
+		<string>Modified</string>
+		<key>Chapters/Shapes.playgroundchapter/Pages/873AB4A7-D996-47C7-A5B0-C33A8C7E8E95.playgroundpage/UserManifest.plist</key>
+		<string>Added</string>
+		<key>Chapters/Shapes.playgroundchapter/Pages/873AB4A7-D996-47C7-A5B0-C33A8C7E8E95.playgroundpage/main.swift</key>
+		<string>Modified</string>
+		<key>Chapters/Shapes.playgroundchapter/Pages/AB11C519-B8FB-4359-BA38-15091A9F073E.playgroundpage/UserManifest.plist</key>
+		<string>Added</string>
+		<key>Chapters/Shapes.playgroundchapter/Pages/AB11C519-B8FB-4359-BA38-15091A9F073E.playgroundpage/main.swift</key>
+		<string>Modified</string>
+		<key>Chapters/Shapes.playgroundchapter/Pages/D82297B8-8731-46BC-ABF0-25AB82A386D4.playgroundpage/UserManifest.plist</key>
+		<string>Added</string>
+		<key>Chapters/Shapes.playgroundchapter/Pages/D82297B8-8731-46BC-ABF0-25AB82A386D4.playgroundpage/main.swift</key>
+		<string>Modified</string>
+		<key>Chapters/Shapes.playgroundchapter/UserManifest.plist</key>
+		<string>Added</string>
+		<key>UserModules/MyFiles.playgroundmodule/Sources/SharedCode.swift</key>
+		<string>Modified</string>
+	</dict>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+	<key>UpdatedContentVersion</key>
+	<string>3.0.2</string>
+</dict>
+</plist>

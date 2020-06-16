@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Shapes.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>/* ---------------- considerations -------------------  */
+/* 
+ 
+ This playground were made to be a live view experience. 
+ The code interations will not influence. 
+ 
+ */
+
+
+import Foundation
+import PlaygroundSupport
+
+Canvas.shared.color = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+
+var count = 0 
+
+var next = Image(name: "nextButton")
+next.scale = 0.01
+next.center = Point(x: 0, y: -50)
+
+let title = Image(name: "titlePg3")
+title.center = Point(x: 0, y: 0)
+title.size = Size(width: 50, height: 50)
+
+let faseImg = Image(name: "fasePg3")
+faseImg.center = Point(x: 0, y: 20)
+faseImg.scale = 0
+
+let instructions = Image(name: "instructions")
+instructions.center = Point(x: -4, y: -15)
+instructions.size = Size(width: 50, height: 50)
+
+let congrats = Image(name: "cg3")
+congrats.center = Point(x: 0, y: -23)
+congrats.size = Size(width: 45, height: 35)
+congrats.scale = 0
+
+/* ------------------- set tv buttons  -------------------  */
+
+let goButton = Image(name: "botaoIr@3x")
+goButton.center = Point(x: 17, y: 23)
+goButton.size = Size(width: 4, height: 4)
+
+
+/* ------------------- set tv channels  -------------------  */
+
+let channel1 = Image(name: "canal1")
+channel1.center = Point(x: 2.6, y: 15)
+channel1.size = Size(width: 23.5, height: 23.5)
+
+let channel2 = Image(name: "canal2")
+channel2.center = Point(x: 2.6, y: 15)
+channel2.size = Size(width:23.5, height: 23.5)
+channel2.scale = 0.001
+
+let channel3 = Image(name: "canal3")
+channel3.center = Point(x: 2.6, y: 15)
+channel3.size = Size(width: 23.5, height: 23.5)
+channel3.scale = 0.001
+
+let channel4 = Image(name: "canal4")
+channel4.center = Point(x: 2.6, y: 15)
+channel4.size = Size(width: 23.5, height: 23.5)
+channel4.scale = 0.001
+
+/* ------------------- set animations  -------------------  */
+
+faseImg.scale = 0
+channel1.scale = 0.001
+goButton.scale = 0.01
+instructions.scale = 0.01
+
+animate ( duration: 3, delay: 2.0){
+    
+    title.center = Point(x: -140, y: 0)
+    faseImg.scale = 3
+    channel1.scale = 1
+    goButton.scale = 1
+    instructions.scale = 1
+    
+}
+
+/* ------------------- set logic to change channels  -------------------  */
+
+goButton.onTouchUp {
+    channel1.scale = 0.01
+    channel2.scale = 1
+    
+    goButton.onTouchUp {
+        channel2.scale = 0.001
+        channel3.scale = 1
+        
+        goButton.onTouchUp {
+            channel3.scale = 0.001
+            channel4.scale = 1
+            
+            instructions.scale = 0
+            congrats.scale = 1.5
+            
+            next.scale = 1
+            next.onTouchUp {
+                PlaygroundPage.current.navigateTo(page: .next)
+                
+            }
+            
+        }
+    }
+    
+}
+
+
+</string>
+			<key>ModifiedRange</key>
+			<string>{291, 2664}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{291, 0}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

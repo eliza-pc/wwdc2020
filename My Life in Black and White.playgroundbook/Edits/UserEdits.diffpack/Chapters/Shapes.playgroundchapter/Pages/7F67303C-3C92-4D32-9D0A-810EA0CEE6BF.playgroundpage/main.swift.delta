@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Shapes.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>/* ---------------- considerations -------------------  */
+/* 
+ 
+ This playground were made to be a live view experience. 
+ The code interations will not influence. 
+ 
+ */
+
+
+import Foundation
+import PlaygroundSupport
+
+/* ------------------- Variables -------------------  */
+
+let backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+var delayTime = 1.0
+var durationTime = 3.3
+var count = 0 
+
+var next = Image(name: "nextButton")
+next.scale = 0
+next.center = Point(x: +0, y: -30)
+
+/* ------------------- Background Color -------------------  */
+
+Canvas.shared.color = backgroundColor
+
+/* ------------------- Set Img  -------------------  */
+
+let title = Image(name: "title")
+title.center = Point(x: 0, y: 0)
+title.size = Size(width: 50, height: 50)
+
+let intro1 = Image(name: "introPg2")
+intro1.size = Size(width: 65, height: 65)
+intro1.center = Point(x: 0, y: -25)
+intro1.scale = 0.001
+
+let imgPg2 = Image(name: "imgPg2")
+imgPg2.size = Size(width: 15, height: 15)
+imgPg2.center = Point(x: 0, y: 20)
+imgPg2.scale = 0.001
+
+let introPt3 = Image(name: "introPt3")
+introPt3.size = Size(width: 65, height: 65)
+introPt3.center = Point(x: 0, y: -25)
+introPt3.scale = 0.001
+
+let imgPg3 = Image(name: "imgPg3")
+imgPg3.size = Size(width: 15, height: 15)
+imgPg3.center = Point(x: 0, y: 20)
+imgPg3.scale = 0.001
+
+let introPt4 = Image(name: "introPt4")
+introPt4.size = Size(width: 65, height: 65)
+introPt4.center = Point(x: 0, y: 0)
+introPt4.scale = 0.001
+
+/* ------------------- Action of NextButton  -------------------  */
+animate (duration: 2, delay: 2.0){
+    title.center = Point(x: -140, y: 0)
+    
+    intro1.scale = 1
+    imgPg2.scale = 4
+    
+}
+animate (duration: 3, delay: 8.0){
+    
+    intro1.center = Point(x: -140, y: 45)
+    imgPg2.center = Point(x: -140, y: -3)
+    
+    introPt3.scale = 1
+    imgPg3.scale = 4
+    
+}
+animate (duration: 3, delay: 16.0){
+    
+    introPt3.center = Point(x: 140, y: 45)
+    imgPg3.center = Point(x: 140, y: -3)
+    
+    introPt4.scale = 1
+    next.scale = 1
+    
+    next.center = Point(x: +0, y: -40)
+    
+    next.onTouchUp {
+        PlaygroundPage.current.navigateTo(page: .next)
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+</string>
+			<key>ModifiedRange</key>
+			<string>{291, 2167}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{291, 0}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

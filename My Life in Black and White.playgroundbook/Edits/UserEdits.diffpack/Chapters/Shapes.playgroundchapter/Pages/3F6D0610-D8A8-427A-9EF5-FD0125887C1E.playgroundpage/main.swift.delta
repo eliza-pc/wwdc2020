@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Shapes.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>/* ---------------- considerations -------------------  */
+/* 
+ 
+ This playground were made to be a live view experience. 
+ The code interations will not influence. 
+ 
+ */
+
+
+import Foundation
+import PlaygroundSupport
+
+Canvas.shared.color = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+
+var count1 = 0
+var count2 = 0
+var count3 = 0
+
+var next = Image(name: "nextButton")
+next.scale = 0
+next.center = Point(x: +0, y: -50)
+
+let title = Image(name: "titlePg5")
+title.center = Point(x: 0, y: 0)
+title.size = Size(width: 50, height: 50)
+
+let faseImg = Image(name: "fasePg5")
+faseImg.center = Point(x: 0, y: 20)
+//faseImg.scale = 3
+faseImg.scale = 0
+
+let instructions = Image(name: "dcpPg5")
+instructions.center = Point(x: -10, y: -15)
+instructions.size = Size(width: 40, height: 30)
+instructions.scale = 0
+
+let congrats = Image(name: "cg1")
+congrats.center = Point(x: 0, y: -23)
+congrats.size = Size(width: 45, height: 35)
+congrats.scale = 0
+
+/* ------------------- set tv buttons  -------------------  */
+
+let phoneImg = Image(name: "phoneButton")
+phoneImg.center = Point(x: -26, y: -25)
+phoneImg.size = Size(width: 10, height: 10)
+phoneImg.draggable = true
+
+
+let coupImg = Image(name: "walkieButton")
+coupImg.center = Point(x: -15, y: -25)
+coupImg.size = Size(width: 10, height: 10)
+coupImg.draggable = true
+
+
+let phoneImg1 = Image(name: "phoneButton")
+phoneImg1.center = Point(x: 15, y: -25)
+phoneImg1.size = Size(width: 10, height: 10)
+phoneImg1.draggable = true
+
+
+let coupImg1 = Image(name: "walkieButton")
+coupImg1.center = Point(x: 26, y: -25)
+coupImg1.size = Size(width: 10, height: 10)
+coupImg1.draggable = true
+
+let phoneImgRED = Image(name: "phoneButtonRED")
+phoneImgRED.center = Point(x: -26, y: -25)
+phoneImgRED.size = Size(width: 0, height: 0)
+phoneImg.draggable = true
+
+let coupImgRED = Image(name: "walkieTakieButton")
+coupImgRED.center = Point(x: -15, y: -25)
+coupImgRED.size = Size(width: 0, height: 0)
+coupImgRED.draggable = true
+
+let phoneImgRED1 = Image(name: "phoneButtonRED")
+phoneImgRED1.center = Point(x: -26, y: -25)
+phoneImgRED1.size = Size(width: 0, height: 0)
+
+
+let coupImgRED1 = Image(name: "walkieTakieButton")
+coupImgRED1.center = Point(x: -15, y: -25)
+coupImgRED1.size = Size(width: 0, height: 0)
+
+let connection1 = Image(name: "conection")
+connection1.center = Point(x: -6, y: 20)
+connection1.size = Size(width: 0, height: 0)
+
+
+let connection2 = Image(name: "conection")
+connection2.center = Point(x: -6, y: 5)
+connection2.size = Size(width: 0, height: 0)
+
+
+func validaGame() {
+    if(coupImgRED1.size.height == 5 &amp;&amp; coupImgRED.size.height == 5 &amp;&amp; phoneImgRED.size.height == 5 &amp;&amp; phoneImgRED1.size.height == 5){
+        instructions.scale = 0
+        congrats.scale = 1.5
+        next.scale = 1
+        
+        next.onTouchUp {
+            PlaygroundPage.current.navigateTo(page: .next)
+        }
+    }
+}
+
+func validaConnection(connectionImage: Image, count:Int){
+    if(count == 2){
+        connectionImage.size = Size(width: 20, height: 20)
+    }
+}
+
+/* ------------------- set animations  -------------------  */
+
+phoneImg.scale = 0
+coupImg.scale = 0
+phoneImg1.scale = 0
+coupImg1.scale = 0
+
+animate ( duration: 3, delay: 2.0){
+    
+    title.center = Point(x: -140, y: 0)
+    
+    faseImg.scale = 3
+    phoneImg.scale = 1
+    coupImg.scale = 1
+    phoneImg1.scale = 1
+    coupImg1.scale = 1
+    instructions.scale = 1
+}
+
+
+
+/* ------------------- set tv buttons  -------------------  */
+
+phoneImg.onTouchUp {
+    print(phoneImg.center)
+    if((phoneImg.center.x &gt;= -25 &amp;&amp; phoneImg.center.x &lt;= -10) &amp;&amp; (phoneImg.center.y &gt;= 11 &amp;&amp; phoneImg.center.y &lt;= 15)){
+        
+        phoneImgRED.size = Size(width: 5, height: 5)
+        
+        phoneImg.scale = 0.001
+        phoneImgRED.center = Point(x: -19.5, y: 13.6)
+        count1 += 1
+        
+        validaConnection(connectionImage: connection1, count: count1)
+        validaGame()
+    }
+    
+}
+coupImg.onTouchUp {
+    print(coupImg.center)
+    if((coupImg.center.x &gt;= -21 &amp;&amp; coupImg.center.x &lt;= -15) &amp;&amp; (coupImg.center.y &gt;= -2 &amp;&amp; coupImg.center.y &lt;= 2)){
+        
+        coupImgRED.size = Size(width: 5, height: 5)
+        //phoneImgRED.scale = 0.9
+        
+        coupImg.scale = 0.001
+        coupImgRED.center = Point(x: -19.5, y: -1)
+        count2 += 1
+
+        validaConnection(connectionImage: connection2, count: count2)
+        validaGame()
+    }
+    
+}
+
+phoneImg1.onTouchUp {
+    print(phoneImg1.center)
+    
+    if((phoneImg1.center.x &gt;= 7 &amp;&amp; phoneImg1.center.x &lt;= 11) &amp;&amp; (phoneImg1.center.y &gt;= 23 &amp;&amp; phoneImg1.center.y &lt;= 27)){
+        
+        phoneImgRED1.size = Size(width: 5, height: 5)
+        
+        phoneImg1.scale = 0.001
+        phoneImgRED1.center = Point(x: 9.7, y: 24)
+        
+        count1 += 1
+        
+        validaConnection(connectionImage: connection1, count: count1)
+        validaGame()
+    }
+    
+}
+coupImg1.onTouchUp {
+    print(coupImg1.center)
+    if((coupImg1.center.x &gt;= 7 &amp;&amp; coupImg1.center.x &lt;= 11) &amp;&amp; (coupImg1.center.y &gt;= 7 &amp;&amp; coupImg1.center.y &lt;= 11)){
+        
+        coupImgRED1.size = Size(width: 5, height: 5)
+        
+        coupImg1.scale = 0.001
+        coupImgRED1.center = Point(x: 9.4, y: 9.14)
+        
+        
+        count2 += 1
+        
+        validaConnection(connectionImage: connection2, count: count2)
+        validaGame()
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+</string>
+			<key>ModifiedRange</key>
+			<string>{291, 5313}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{291, 0}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
